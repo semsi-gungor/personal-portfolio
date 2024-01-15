@@ -17,21 +17,19 @@ const Navbar: FC = ({}) => {
   const indicatorRef = useRef<ElementRef<"div">>(null);
 
   useEffect(() => {
-    console.log(index);
+    function onClick(index: number) {
+      if (!indicatorRef.current) return;
+      if (!sections[index].ref.current) return;
+      const activeRef = sections[index].ref;
+      const width = activeRef.current!.clientWidth;
+      const left = activeRef.current!.offsetLeft;
+
+      indicatorRef.current.style.setProperty("--width", `${width}px`);
+      indicatorRef.current.style.setProperty("--left", `${left}px`);
+    }
 
     onClick(index);
-  }, [index, onClick]);
-
-  function onClick(index: number) {
-    if (!indicatorRef.current) return;
-    if (!sections[index].ref.current) return;
-    const activeRef = sections[index].ref;
-    const width = activeRef.current!.clientWidth;
-    const left = activeRef.current!.offsetLeft;
-
-    indicatorRef.current.style.setProperty("--width", `${width}px`);
-    indicatorRef.current.style.setProperty("--left", `${left}px`);
-  }
+  }, [index]);
 
   function onPointerDown(index: number) {
     const divs = document.querySelectorAll("div[data-index]");
