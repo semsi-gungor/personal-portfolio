@@ -7,22 +7,24 @@ export function useHoverState<T extends HTMLElement>(type: "hover" | "link") {
 
   useEffect(() => {
     if (!ref.current) return;
+    const refValue = ref.current;
 
     function onMouseEnter() {
       setCursorState(type);
     }
-    ref.current.addEventListener("mouseenter", onMouseEnter);
-
     function onMouseLeave() {
       setCursorState("default");
     }
-    ref.current.addEventListener("mouseleave", onMouseLeave);
+
+    refValue.addEventListener("mouseenter", onMouseEnter);
+
+    refValue.addEventListener("mouseleave", onMouseLeave);
 
     return () => {
-      ref.current?.removeEventListener("mouseenter", onMouseEnter);
-      ref.current?.removeEventListener("mouseleave", onMouseLeave);
+      refValue.removeEventListener("mouseenter", onMouseEnter);
+      refValue.removeEventListener("mouseleave", onMouseLeave);
     };
-  }, [setCursorState]);
+  }, [setCursorState, ref, type]);
 
   return ref;
 }

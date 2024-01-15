@@ -16,7 +16,7 @@ const OnViewTrigger: FC<OnViewTriggerProps> = ({ index }) => {
 
   useEffect(() => {
     if (inView) setNavbarIndex(index);
-  }, [inView]);
+  }, [inView, index, setNavbarIndex]);
 
   return <div ref={ref} className={styles.trigger} aria-hidden></div>;
 };
