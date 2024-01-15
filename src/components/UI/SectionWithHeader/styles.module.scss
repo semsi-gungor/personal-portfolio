@@ -1,0 +1,28 @@
+.headingWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 4rem;
+  position: relative;
+
+  .heading {
+    font-size: 4rem;
+    color: #d3d3d3;
+    font-weight: 500;
+  }
+}
+
+$sm: 600px;
+$md: 840px;
+$lg: 992px;
+
+@media only screen and (max-width: $md) {
+}
+
+@media only screen and (max-width: $sm) {
+  .headingWrapper {
+    .heading {
+      font-size: 3rem;
+    }
+  }
+}
