@@ -22,7 +22,7 @@ export function useHoverState<T extends HTMLElement>(type: "hover" | "link") {
       ref.current?.removeEventListener("mouseenter", onMouseEnter);
       ref.current?.removeEventListener("mouseleave", onMouseLeave);
     };
-  }, [ref]);
+  }, [setCursorState]);
 
   return ref;
 }
