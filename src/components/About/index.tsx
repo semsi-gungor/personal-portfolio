@@ -26,6 +26,7 @@ const techStack = [
 const About: FC = ({}) => {
   return (
     <SectionWithHeader heading="About">
+      <OnViewTrigger index={1} />
       <ScrollTo index={1} />
       <OnViewTrigger index={1} />
       <div className={styles.aboutContainer}>

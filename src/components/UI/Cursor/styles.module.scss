@@ -1,0 +1,55 @@
+.cursorShell {
+  mix-blend-mode: difference;
+
+  position: fixed;
+  z-index: 10000;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  user-select: none;
+
+  transform: translate(calc(var(--x) - 0.75rem), calc(var(--y) - 0.75rem));
+}
+
+.cursor {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 100%;
+  background-color: white;
+  transition: all 300ms;
+
+  display: grid;
+  place-items: center;
+}
+
+.cursor[data-cursor-state="default"] {
+  transform: scale(1);
+}
+
+.cursor[data-cursor-state="hover"] {
+  transform: scale(2.5);
+}
+
+.cursor[data-cursor-state="link"] {
+  transform: scale(4);
+}
+
+.cursor[data-cursor-state="none"] {
+  opacity: 0;
+}
+
+$sm: 600px;
+$md: 840px;
+$lg: 992px;
+
+@media only screen and (max-width: $md) {
+  .cursorShell {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: $sm) {
+  .cursorShell {
+    display: none;
+  }
+}

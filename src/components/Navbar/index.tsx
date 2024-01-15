@@ -5,7 +5,7 @@ import styles from "./styles.module.scss";
 import { useNavbar } from "@/context/navbar-context";
 
 const Navbar: FC = ({}) => {
-  const { index, setNavbarIndex } = useNavbar();
+  const { index } = useNavbar();
 
   const sections = [
     { title: "Home", ref: useRef<ElementRef<"ul">>(null) },
@@ -17,6 +17,8 @@ const Navbar: FC = ({}) => {
   const indicatorRef = useRef<ElementRef<"div">>(null);
 
   useEffect(() => {
+    console.log(index);
+
     onClick(index);
   }, [index, onClick]);
 

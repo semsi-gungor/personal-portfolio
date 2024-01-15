@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/UI/Navbar";
+import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Cursor from "@/components/UI/Cursor";
+import Provider from "@/components/Providers";
 
 const font = Poppins({
   subsets: ["latin"],
@@ -21,14 +23,17 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body
-        className={font.className}
-        style={{ backgroundColor: "var(--dark)" }}
-      >
-        <Navbar />
-        {children}
-        <Footer />
-      </body>
+      <Provider>
+        <body
+          className={font.className}
+          style={{ backgroundColor: "var(--dark)" }}
+        >
+          <Navbar />
+          <Cursor />
+          {children}
+          <Footer />
+        </body>
+      </Provider>
     </html>
   );
 }

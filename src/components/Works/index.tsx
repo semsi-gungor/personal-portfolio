@@ -8,6 +8,7 @@ import ScrollTo from "../UI/ScrollTo";
 const Works: FC = ({}) => {
   return (
     <SectionWithHeader heading="Works">
+      <OnViewTrigger index={2} />
       <ScrollTo index={2} />
       <OnViewTrigger index={2} />
       <div className={styles.works}>

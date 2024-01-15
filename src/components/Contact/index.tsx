@@ -9,6 +9,7 @@ import ScrollTo from "../UI/ScrollTo";
 const Contact: FC = ({}) => {
   return (
     <SectionWithHeader heading="Contact">
+      <OnViewTrigger index={3} />
       <ScrollTo index={3} />
       <OnViewTrigger index={3} />
       <div className={styles.container}>
