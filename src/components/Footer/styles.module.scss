@@ -1,0 +1,40 @@
+.footer {
+  padding-inline: 12rem;
+  width: 100%;
+
+  .sections {
+    display: flex;
+    position: relative;
+
+    .section {
+      flex: 1 0 0%;
+      color: white;
+      position: relative;
+      height: 10rem;
+      display: flex;
+      align-items: center;
+
+      &:nth-child(3) {
+        justify-content: center;
+      }
+      &:nth-child(4) {
+        justify-content: flex-end;
+      }
+    }
+  }
+
+  .foot {
+    padding-block: 1.5rem;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.8rem;
+
+    div {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+  }
+}
