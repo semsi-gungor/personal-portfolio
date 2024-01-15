@@ -8,10 +8,10 @@ const Navbar: FC = ({}) => {
   const { index } = useNavbar();
 
   const sections = [
-    { title: "Home", ref: useRef<ElementRef<"ul">>(null) },
-    { title: "About", ref: useRef<ElementRef<"ul">>(null) },
-    { title: "Works", ref: useRef<ElementRef<"ul">>(null) },
-    { title: "Contact", ref: useRef<ElementRef<"ul">>(null) },
+    { title: "Home" },
+    { title: "About" },
+    { title: "Works" },
+    { title: "Contact" },
   ];
 
   const indicatorRef = useRef<ElementRef<"div">>(null);
@@ -19,13 +19,18 @@ const Navbar: FC = ({}) => {
   useEffect(() => {
     function onClick(index: number) {
       if (!indicatorRef.current) return;
-      if (!sections[index].ref.current) return;
-      const activeRef = sections[index].ref;
-      const width = activeRef.current!.clientWidth;
-      const left = activeRef.current!.offsetLeft;
+
+      const lis = document.querySelectorAll("li[data-index]");
+
+      const { left, width, x } = lis[index].getBoundingClientRect();
+
+      const { left: firstLeft } = lis[0].getBoundingClientRect();
 
       indicatorRef.current.style.setProperty("--width", `${width}px`);
-      indicatorRef.current.style.setProperty("--left", `${left}px`);
+      indicatorRef.current.style.setProperty(
+        "--left",
+        `${left - firstLeft + 10}px`
+      );
     }
 
     onClick(index);
@@ -41,18 +46,18 @@ const Navbar: FC = ({}) => {
 
   return (
     <nav className={styles.navbar}>
-      <li className={styles.navList}>
+      <ul className={styles.navList}>
         {sections.map((section, index) => (
-          <ul
+          <li
+            data-index={index}
             onPointerDown={onPointerDown.bind(null, index)}
-            ref={section.ref}
             className={styles.navItem}
             key={section.title}
           >
             {section.title}
-          </ul>
+          </li>
         ))}
-      </li>
+      </ul>
       <div ref={indicatorRef} className={styles.activeIndicator}></div>
     </nav>
   );
