@@ -13,7 +13,7 @@ const Header: FC = ({}) => {
         <span className={styles.imgContainer}>
           <Image src={Hand} alt="" fill />
         </span>
-        <span>I'm Şemsi.</span>
+        <span>I&apos;m Şemsi.</span>
       </h1>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sed
