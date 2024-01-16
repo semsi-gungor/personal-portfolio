@@ -3,9 +3,14 @@
 import { FC, useRef, ElementRef, useEffect } from "react";
 import styles from "./styles.module.scss";
 import { useNavbar } from "@/context/navbar-context";
+import { usePathname } from "next/navigation";
 
 const Navbar: FC = ({}) => {
   const { index } = useNavbar();
+
+  const pathname = usePathname();
+
+  if (pathname !== "/") return null;
 
   const sections = [
     { title: "Home" },
