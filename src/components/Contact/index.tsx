@@ -22,21 +22,21 @@ const Contact: FC = ({}) => {
           <Seperator direction="vertical" origin="top" delay={500} />
           <div className={styles.link}>
             <div className={styles.expand}></div>
-            <p>email</p> <ArrowUpRight size={50} />
+            <p>email</p> <ArrowUpRight size={40} />
           </div>
           <div className={styles.link}>
             <div className={styles.expand}></div>
-            <p>github</p> <ArrowUpRight size={50} />
+            <p>github</p> <ArrowUpRight size={40} />
           </div>
         </div>
         <div className={styles.linkContainer}>
           <div className={styles.link}>
             <div className={styles.expand}></div>
-            <p>linkedin</p> <ArrowUpRight size={50} />
+            <p>linkedin</p> <ArrowUpRight size={40} />
           </div>
           <div className={styles.link}>
             <div className={styles.expand}></div>
-            <p>cv.me</p> <ArrowUpRight size={50} />
+            <p>cv.me</p> <ArrowUpRight size={40} />
           </div>
         </div>
       </div>

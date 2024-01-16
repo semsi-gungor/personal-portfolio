@@ -58,8 +58,8 @@ const Clock: FC = ({}) => {
   }, []);
 
   return (
-    <div className="flex gap-8">
-      <div className="w-24 aspect-square border-4 rounded-full grid place-items-center">
+    <div className="flex gap-4 md:gap-8">
+      <div className="w-16 md:w-24 aspect-square border-4 rounded-full grid place-items-center">
         {/* hand */}
         <div
           style={{ transform: `rotate(${handAngle}deg)` }}
@@ -69,7 +69,7 @@ const Clock: FC = ({}) => {
           <div className="flex-1"></div>
         </div>
       </div>
-      <div className="flex flex-col justify-center tabular-nums">
+      <div className="flex flex-col justify-center tabular-nums text-xs md:text-base">
         <p>
           {clock.hours}:{clock.minutes} local time
         </p>
