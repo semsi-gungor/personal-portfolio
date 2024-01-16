@@ -5,6 +5,7 @@ import styles from "./styles.module.scss";
 import Seperator from "@/components/UI/Seperator";
 import Image from "next/image";
 import { useHoverState } from "@/hooks/use-hover-state";
+import ImageWithLoader from "@/components/UI/ImageWithLoader";
 
 interface WorkProps {
   id: string;
@@ -45,12 +46,8 @@ const Work: FC<WorkProps> = ({
           </div>
         </div>
         <div className={styles.imgContainer}>
-          <Image
-            src="https://images.unsplash.com/photo-1533022139390-e31c488d69e2"
-            alt=""
-            fill
-            className="object-cover"
-          />
+          {/* <Image src={imageSrc} alt="" fill className="object-cover" /> */}
+          <ImageWithLoader src={imageSrc} />
         </div>
       </div>
     </div>

@@ -4,6 +4,7 @@ import { FC, useState } from "react";
 import styles from "./styles.module.scss";
 import Image from "next/image";
 import Modal from "@/components/UI/Modal";
+import ImageWithLoader from "@/components/UI/ImageWithLoader";
 
 type WorkPageProps = {
   images: Array<string>;
@@ -18,7 +19,8 @@ const Gallery: FC<WorkPageProps> = ({ images }) => {
     <>
       <Modal isModalOpen={open} setIsModalOpen={setOpen}>
         <div className={styles.picModal}>
-          <Image src={images[index]} fill alt="" />
+          {/* <Image src={images[index]} fill alt="" /> */}
+          <ImageWithLoader src={images[index]} />
         </div>
       </Modal>
 
@@ -29,7 +31,8 @@ const Gallery: FC<WorkPageProps> = ({ images }) => {
           }}
           className={styles.selected}
         >
-          <Image src={images[index]} fill alt="" />
+          {/* <Image src={images[index]} fill alt="" /> */}
+          <ImageWithLoader src={images[index]} />
         </div>
         <div className={styles.gallery}>
           {images.map((pic, index) => {
@@ -41,7 +44,8 @@ const Gallery: FC<WorkPageProps> = ({ images }) => {
                 key={pic}
                 className={styles.galleryItem}
               >
-                <Image src={pic} fill alt="" />
+                {/* <Image src={pic} fill alt="" /> */}
+                <ImageWithLoader src={pic} />
               </div>
             );
           })}
