@@ -16,7 +16,6 @@ const Contact: FC = ({}) => {
     <SectionWithHeader heading="Contact">
       <OnViewTrigger index={3} />
       <ScrollTo index={3} />
-      <OnViewTrigger index={3} />
       <div ref={ref} className={styles.container}>
         <Seperator direction="horizontal" origin="left" />
         <div className={styles.linkContainer}>

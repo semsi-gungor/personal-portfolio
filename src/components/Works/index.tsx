@@ -11,25 +11,8 @@ const Works: FC = ({}) => {
     <SectionWithHeader heading="Works">
       <OnViewTrigger index={2} />
       <ScrollTo index={2} />
-      <OnViewTrigger index={2} />
       <div className={styles.works}>
-        {/* <Work
-          id="01"
-          role={["Frontend Development"]}
-          imageSrc="https://images.unsplash.com/photo-1570891836654-d4961a7b6929"
-          techStack={["Next.js", "Next.js", "Next.js"]}
-          title="Project Title"
-          year="2023"
-        />
-        <Work
-          id="01"
-          role={["Frontend Development"]}
-          imageSrc="https://images.unsplash.com/photo-1570891836654-d4961a7b6929"
-          techStack={["Next.js", "Next.js", "Next.js"]}
-          title="Project Title"
-          year="2023"
-        /> */}
-        {projects.map((project) => (
+        {/* {projects.map((project) => (
           <Work
             key={project.id}
             id={project.id}
@@ -39,7 +22,7 @@ const Works: FC = ({}) => {
             title={project.title}
             year={project.year}
           />
-        ))}
+        ))} */}
       </div>
     </SectionWithHeader>
   );

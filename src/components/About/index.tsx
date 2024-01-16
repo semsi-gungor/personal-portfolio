@@ -28,7 +28,6 @@ const About: FC = ({}) => {
     <SectionWithHeader heading="About">
       <OnViewTrigger index={1} />
       <ScrollTo index={1} />
-      <OnViewTrigger index={1} />
       <div className={styles.aboutContainer}>
         <Seperator direction="horizontal" origin="left" />
         <p>
