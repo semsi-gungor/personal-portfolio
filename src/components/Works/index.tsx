@@ -12,7 +12,7 @@ const Works: FC = ({}) => {
       <OnViewTrigger index={2} />
       <ScrollTo index={2} />
       <div className={styles.works}>
-        {/* {projects.map((project) => (
+        {projects.map((project) => (
           <Work
             key={project.id}
             id={project.id}
@@ -22,7 +22,7 @@ const Works: FC = ({}) => {
             title={project.title}
             year={project.year}
           />
-        ))} */}
+        ))}
       </div>
     </SectionWithHeader>
   );
