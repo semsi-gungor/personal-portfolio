@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 module.exports = {
+  outputFileTracing: false,
   images: {
     remotePatterns: [
       {
