@@ -1,9 +1,10 @@
 "use client";
 
-import { FC } from "react";
+import { ElementRef, FC } from "react";
 import styles from "./styles.module.scss";
 import Seperator from "@/components/UI/Seperator";
 import Image from "next/image";
+import { useHoverState } from "@/hooks/use-hover-state";
 
 interface WorkProps {
   id: string;
@@ -22,8 +23,10 @@ const Work: FC<WorkProps> = ({
   title,
   year,
 }) => {
+  const ref = useHoverState<ElementRef<"div">>("link");
+
   return (
-    <div className={styles.work}>
+    <div ref={ref} className={styles.work}>
       <div className={styles.banner}>
         <Seperator direction="horizontal" origin="left" />
         <div>

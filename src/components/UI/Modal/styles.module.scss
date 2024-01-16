@@ -1,0 +1,63 @@
+.overlay {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 998;
+  backdrop-filter: blur(4px);
+}
+
+.overlay[data-state="true"] {
+  animation: appear 300ms forwards;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.overlay[data-state="false"] {
+  animation: disappear 300ms forwards;
+}
+
+@keyframes disappear {
+  to {
+    opacity: 0;
+  }
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+}
+
+.modal[data-state="true"] {
+  animation: appear 300ms forwards;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.modal[data-state="false"] {
+  animation: disappear 300ms forwards;
+}
+
+@keyframes disappear {
+  to {
+    opacity: 0;
+  }
+}

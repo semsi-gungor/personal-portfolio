@@ -4,11 +4,14 @@ import { FC, ElementRef } from "react";
 import styles from "./styles.module.scss";
 import Hand from "@/assets/hand.png";
 import Image from "next/image";
+import { useHoverState } from "@/hooks/use-hover-state";
 
 const Header: FC = ({}) => {
+  const ref = useHoverState<ElementRef<"h1">>("hover");
+
   return (
     <header className={styles.header}>
-      <h1 className={styles.heading}>
+      <h1 ref={ref} className={styles.heading}>
         <span>Hello</span>
         <span className={styles.imgContainer}>
           <Image src={Hand} alt="" fill />

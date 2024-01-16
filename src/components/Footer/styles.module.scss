@@ -1,5 +1,5 @@
 .footer {
-  padding-inline: 12rem;
+  padding-inline: 1.5rem;
   width: 100%;
 
   .sections {
@@ -16,6 +16,7 @@
 
       &:nth-child(3) {
         justify-content: center;
+        display: none;
       }
       &:nth-child(4) {
         justify-content: flex-end;
@@ -36,5 +37,25 @@
       align-items: center;
       gap: 0.5rem;
     }
+  }
+}
+
+@media only screen and (min-width: 840px) {
+  .footer {
+    padding-inline: 6rem;
+    .sections {
+      .section {
+        &:nth-child(3) {
+          justify-content: center;
+          display: flex;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1240px) {
+  .footer {
+    padding-inline: 12rem;
   }
 }

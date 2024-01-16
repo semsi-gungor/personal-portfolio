@@ -10,16 +10,58 @@
     position: relative;
 
     &:last-child {
-      padding-left: 4rem;
+      p {
+        padding-left: 2rem;
+      }
     }
 
     .link {
       display: flex;
       align-items: center;
       gap: 1rem;
-      color: white;
-      font-size: 3rem;
+      color: var(--lighter);
+      font-size: 2rem;
       padding: 2rem 0.2rem;
+      position: relative;
+      cursor: pointer;
+
+      .expand {
+        position: absolute;
+        inset: 0;
+        background-color: white;
+        mix-blend-mode: difference;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: all ease-in-out 500ms;
+      }
+
+      &:hover {
+        .expand {
+          transform: scaleX(1);
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 840px) {
+  .container {
+    .linkContainer {
+      .link {
+        font-size: 2.5rem;
+        padding: 2rem 0.2rem;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1240px) {
+  .container {
+    .linkContainer {
+      .link {
+        font-size: 2.5rem;
+        padding: 2rem 0.2rem;
+      }
     }
   }
 }

@@ -8,8 +8,8 @@
   .banner {
     display: flex;
     width: 100%;
-    font-size: 1.5rem;
-    color: white;
+    font-size: 1rem;
+    color: var(--lighter);
     position: relative;
     padding-block: 1.5rem;
 
@@ -18,11 +18,16 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+
+      &:last-child {
+        flex: 3 3 0% !important;
+      }
     }
   }
 
   .detailsContainer {
     display: flex;
+    flex-direction: column;
 
     div {
       flex: 1 1 0%;
@@ -33,10 +38,11 @@
       flex-direction: column;
 
       p {
-        font-size: 3rem;
-        color: white;
-        font-weight: 600;
+        font-size: 2rem;
+        color: var(--lighter);
+        font-weight: 500;
       }
+
       div {
         display: flex;
         align-items: flex-end;
@@ -59,23 +65,81 @@
   flex-wrap: wrap;
   max-width: 100%;
   gap: 1rem;
+  padding: 4rem 0;
 
   .tech {
-    padding: 1rem 1.2rem;
-    border: 2px solid white;
+    padding: 0.5rem 1rem;
+    border: 1px solid white;
     color: white;
     border-radius: 0.75rem;
     flex: 0 0 0% !important;
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 }
 
-$sm: 600px;
-$md: 840px;
-$lg: 992px;
-
-@media only screen and (max-width: $md) {
+@media only screen and (min-width: 840px) {
 }
 
-@media only screen and (max-width: $sm) {
+@media only screen and (min-width: 1240px) {
+  .work {
+    .banner {
+      font-size: 1.5rem;
+      padding-block: 1.5rem;
+
+      div {
+        flex: 1 1 0%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+
+    .detailsContainer {
+      flex-direction: row;
+
+      div {
+        flex: 1 1 0%;
+      }
+
+      .details {
+        display: flex;
+        flex-direction: column;
+
+        p {
+          font-size: 3rem;
+          color: white;
+          font-weight: 600;
+        }
+        div {
+          display: flex;
+          align-items: flex-end;
+        }
+      }
+
+      .imgContainer {
+        position: relative;
+        aspect-ratio: 5/3;
+
+        img {
+          border-radius: 20px;
+        }
+      }
+    }
+  }
+
+  .techStack {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100%;
+    gap: 1rem;
+
+    .tech {
+      padding: 1rem 1.2rem;
+      border: 2px solid white;
+      color: white;
+      border-radius: 0.75rem;
+      flex: 0 0 0% !important;
+      font-size: 1.2rem;
+    }
+  }
 }
