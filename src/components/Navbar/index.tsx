@@ -10,8 +10,6 @@ const Navbar: FC = ({}) => {
 
   const pathname = usePathname();
 
-  if (pathname !== "/") return null;
-
   const sections = [
     { title: "Home" },
     { title: "About" },
@@ -48,6 +46,8 @@ const Navbar: FC = ({}) => {
       divs[index].scrollIntoView({ behavior: "smooth" });
     }
   }
+
+  if (pathname !== "/") return null;
 
   return (
     <nav className={styles.navbar}>
