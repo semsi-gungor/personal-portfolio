@@ -5,6 +5,8 @@ import { getProjectById } from "@/data/projects-data";
 import { notFound, useSearchParams } from "next/navigation";
 import { FC } from "react";
 
+export const dynamic = "force-dynamic";
+
 const Page: FC = () => {
   const searchParams = useSearchParams();
   const id = searchParams.get("id");
