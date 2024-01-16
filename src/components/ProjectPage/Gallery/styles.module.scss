@@ -9,8 +9,11 @@
     width: 100%;
     flex: 1 0 0%;
     cursor: e-resize;
+    width: 100%;
+    aspect-ratio: 4/3;
 
-    img {
+    img,
+    div {
       object-fit: cover;
       border-radius: 20px;
     }
@@ -28,7 +31,8 @@
       aspect-ratio: 4/3;
       cursor: pointer;
 
-      img {
+      img,
+      div {
         object-fit: cover;
         border-radius: 12px;
       }
@@ -43,5 +47,111 @@
 
   img {
     object-fit: cover;
+  }
+}
+
+@media only screen and (min-width: 840px) {
+  .container {
+    flex: 2 0 0%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    .selected {
+      position: relative;
+      width: 100%;
+      flex: 1 0 0%;
+      cursor: e-resize;
+      width: 100%;
+      aspect-ratio: 4/3;
+
+      img,
+      div {
+        object-fit: cover;
+        border-radius: 20px;
+      }
+    }
+
+    .gallery {
+      width: 100%;
+      height: 8rem;
+      display: flex;
+      gap: 16px;
+
+      .galleryItem {
+        position: relative;
+        height: 100%;
+        aspect-ratio: 4/3;
+        cursor: pointer;
+
+        img,
+        div {
+          object-fit: cover;
+          border-radius: 12px;
+        }
+      }
+    }
+  }
+
+  .picModal {
+    height: 95vh;
+    aspect-ratio: 4/3;
+    position: relative;
+
+    img {
+      object-fit: cover;
+    }
+  }
+}
+
+@media only screen and (min-width: 1240px) {
+  .container {
+    flex: 2 0 0%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    .selected {
+      position: relative;
+      width: 100%;
+      flex: 1 0 0%;
+      cursor: e-resize;
+
+      img,
+      div {
+        object-fit: cover;
+        border-radius: 20px;
+      }
+    }
+
+    .gallery {
+      width: 100%;
+      height: 8rem;
+      display: flex;
+      gap: 16px;
+
+      .galleryItem {
+        position: relative;
+        height: 100%;
+        aspect-ratio: 4/3;
+        cursor: pointer;
+
+        img,
+        div {
+          object-fit: cover;
+          border-radius: 12px;
+        }
+      }
+    }
+  }
+
+  .picModal {
+    height: 95vh;
+    aspect-ratio: 4/3;
+    position: relative;
+
+    img {
+      object-fit: cover;
+    }
   }
 }
